@@ -56,10 +56,13 @@ Before install and run the project you will need:
 4. **Access the web application**:
 `http://localhost:8080/index.html`
 
+## Usage
 
+![image](https://github.com/user-attachments/assets/caab921e-65c1-4dd5-b905-d277c803167d)
 
-
-
+1. Write something on the input field.
+2. Click the submit button to send the message.
+3. The page will update with the last 10 logs.
 
 ## Author
 This project was developed by Juan David García Pulido.
