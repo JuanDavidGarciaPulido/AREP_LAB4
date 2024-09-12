@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Service</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        input[type="text"], button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+        }
+        #logEntries {
+            margin-top: 20px;
+        }
+        p {
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<h1>Log Service</h1>
+<input type="text" id="messageInput" placeholder="Enter your message">
+<button onclick="sendMessage()">Send</button>
+<div id="logEntries"></div>
+
+<script>
+    async function sendMessage() {
+        const message = document.getElementById('messageInput').value;
+        if (message.trim() === "") {
+            alert("Please enter a message.");
+            return;
+        }
+
+        try {
+            const response = await axios.post('/api/log', message, {
+                headers: {
+                    'Content-Type': 'text/plain'
+                }
+            });
+            displayLogEntries(response.data);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
+    function displayLogEntries(entries) {
+        const logEntriesDiv = document.getElementById('logEntries');
+        logEntriesDiv.innerHTML = '<h2>Last 10 Logs:</h2>';
+        entries.forEach(entry => {
+            logEntriesDiv.innerHTML += `<p><strong>${new Date(entry.timestamp).toLocaleString()}</strong>: ${entry.message}</p>`;
+        });
+    }
+</script>
+</body>
+</html>
