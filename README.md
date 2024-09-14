@@ -14,6 +14,14 @@ This workshop consists of creating a small web application using the Spark Java 
 
 ![image](https://github.com/user-attachments/assets/ab3e792c-bc38-4808-a8e3-f5a9aea8b6fe)
 
+- **SimpleHttpServer**: The core server class responsible for handling HTTP requests, routing them to the appropriate service methods, and serving static files.
+- **HelloService**: A sample service class annotated with @RestController, which includes various endpoints for testing.
+- **RequestDetails**: A helper class used to parse HTTP requests, extract the path, and query parameters.
+- **Custom Annotations**:
+    * @RestController: Marks a class as a controller for handling web requests. 
+    * @GetMapping: Maps HTTP GET requests to methods.
+    * @RequestParam: Binds query parameters to method parameters.
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -59,6 +67,10 @@ Before install and run the project you will need:
 ## Usage
 
 ![image](https://github.com/user-attachments/assets/caab921e-65c1-4dd5-b905-d277c803167d)
+
+
+https://github.com/user-attachments/assets/fb44151a-0d13-4da8-bb8a-8628916d6a59
+
 
 1. Write something on the input field.
 2. Click the submit button to send the message.
