@@ -69,6 +69,8 @@ Before install and run the project you will need:
 ![image](https://github.com/user-attachments/assets/caab921e-65c1-4dd5-b905-d277c803167d)
 
 
+Project running on AWS EC2:
+
 https://github.com/user-attachments/assets/fb44151a-0d13-4da8-bb8a-8628916d6a59
 
 
